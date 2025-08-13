@@ -1,0 +1,56 @@
+.fonctionnement {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+
+    h2 {
+        display: flex;
+        justify-self: flex-start;
+        margin: 1rem;
+    }
+
+    ol {
+        list-style: none;
+        padding: 2rem;
+        margin: 0;
+
+        li {
+            max-width: 335px;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: $background;
+            padding: 1rem 0 1rem 2rem;
+            border-radius: 20px;
+            box-shadow: $shadow-default;
+            position: relative;
+            margin-bottom: 1rem;
+
+            .number {
+                position: absolute;
+                left: -0.75rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: $purple;
+                color: white;
+                font-size: 14px;
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                border-radius: 50%;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            i {
+                color: $darkgrey;
+
+                &.fa-store {
+                    color: $purple;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.fav-checkbox {
+    display: none;
+}
+
+.fav-label {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 22px;
+    font-size: 22px;
+    color: $black;
+
+    i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    i.fas {
+        display: none;
+    }
+
+    i.far {
+        display: inline;
+    }
+}
+
+.fav-checkbox:checked+.fav-label i.fas {
+    display: inline;
+    background: linear-gradient(to bottom, $purple, $pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fav-checkbox:checked+.fav-label i.far {
+    display: none;
+}

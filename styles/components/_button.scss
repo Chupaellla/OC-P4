@@ -1,0 +1,17 @@
+button,
+a.btn {
+    height: 50px;
+    width: 218px;
+    border-radius: 50px;
+    background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+    color: $white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+}

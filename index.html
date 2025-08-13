@@ -33,7 +33,7 @@
     <section class="info">
         <h1>Réservez le menu qui vous convient</h1>
         <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-        <button href="#">Explorer nos restaurants</button>
+        <a href="#restaurant" class="btn">Explorer nos restaurants</a>
     </section>
 
     <section class="fonctionnement">
@@ -57,7 +57,7 @@
         </ol>
     </section>
 
-    <section class="restaurant">
+    <section class="restaurant" id="restaurant">
         <h2>Restaurants</h2>
 
         <div>
@@ -74,8 +74,13 @@
                             <p>Ménilmontant</p>
                         </div>
                         <div class="card-favorite">
-                            <i class="far fa-heart"></i>
+                            <input type="checkbox" id="fav-1" class="fav-checkbox" />
+                            <label for="fav-1" class="fav-label">
+                                <i class="far fa-heart"></i> <!-- cœur vide -->
+                                <i class="fas fa-heart"></i> <!-- cœur plein -->
+                            </label>
                         </div>
+
                     </div>
                 </a>
             </article>
@@ -92,8 +97,13 @@
                             <p>Charonne</p>
                         </div>
                         <div class="card-favorite">
-                            <i class="far fa-heart"></i>
+                            <input type="checkbox" id="fav-2" class="fav-checkbox" />
+                            <label for="fav-2" class="fav-label">
+                                <i class="far fa-heart"></i> <!-- cœur vide -->
+                                <i class="fas fa-heart"></i> <!-- cœur plein -->
+                            </label>
                         </div>
+
                     </div>
                 </a>
             </article>
@@ -108,8 +118,13 @@
                             <p>Cité Rouge</p>
                         </div>
                         <div class="card-favorite">
-                            <i class="far fa-heart"></i>
+                            <input type="checkbox" id="fav-3" class="fav-checkbox" />
+                            <label for="fav-3" class="fav-label">
+                                <i class="far fa-heart"></i> <!-- cœur vide -->
+                                <i class="fas fa-heart"></i> <!-- cœur plein -->
+                            </label>
                         </div>
+
                     </div>
                 </a>
             </article>
@@ -125,8 +140,13 @@
                             <p>Folie-méricourt</p>
                         </div>
                         <div class="card-favorite">
-                            <i class="far fa-heart"></i>
+                            <input type="checkbox" id="fav-4" class="fav-checkbox" />
+                            <label for="fav-4" class="fav-label">
+                                <i class="far fa-heart"></i> <!-- cœur vide -->
+                                <i class="fas fa-heart"></i> <!-- cœur plein -->
+                            </label>
                         </div>
+
                     </div>
                 </a>
             </article>

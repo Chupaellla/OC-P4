@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #F6F6F6;
   margin: 0;
@@ -12,12 +16,12 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100dvw;
+  width: 100vw;
 }
 header .container-logo {
   background-color: white;
   padding: 0.5rem;
-  width: calc(100dvw - 1rem);
+  width: calc(100vw - 1rem);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
@@ -42,6 +46,158 @@ header .container-location p {
   gap: 1rem;
 }
 
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+footer p {
+  font-family: "Shrikhand";
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+footer ul li a i.fa-solid {
+  font-size: 12px;
+  padding-right: 0.5rem;
+}
+footer ul li a i.fa-solid.fa-handshake {
+  rotate: -45deg;
+  padding-right: 0.4rem;
+  translate: -10% -50%;
+  font-size: 10px;
+}
+
+.fav-checkbox {
+  display: none;
+}
+
+.fav-label {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 22px;
+  font-size: 22px;
+  color: #000000;
+}
+.fav-label i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+}
+.fav-label i.fas {
+  display: none;
+}
+.fav-label i.far {
+  display: inline;
+}
+
+.fav-checkbox:checked + .fav-label i.fas {
+  display: inline;
+  background: linear-gradient(to bottom, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fav-checkbox:checked + .fav-label i.far {
+  display: none;
+}
+
+button,
+a.btn {
+  height: 50px;
+  width: 218px;
+  border-radius: 50px;
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.card-resto {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: white;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 1rem;
+}
+.card-resto .container-img {
+  width: 100%;
+  height: 150px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  overflow: hidden;
+}
+.card-resto .container-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.card-resto .new-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #99E2D0;
+  color: #008766;
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+}
+.card-resto .card-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card-resto .card-data .card-text {
+  margin: 1rem;
+}
+.card-resto .card-data .card-favorite {
+  margin: 1rem;
+  width: 22px;
+  height: 21px;
+  align-self: center;
+  justify-self: center;
+  font-size: 22px;
+}
+.card-resto .card-data h3 {
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+.card-resto .card-data p {
+  margin: 0;
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -62,7 +218,7 @@ header .container-location p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100dvw;
+  width: 100vw;
 }
 .fonctionnement h2 {
   display: flex;
@@ -112,107 +268,6 @@ header .container-location p {
   display: flex;
   flex-direction: column;
   margin: 1rem;
-}
-.restaurant .card-resto {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  background-color: white;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  text-decoration: none;
-  color: inherit;
-  margin-bottom: 1rem;
-}
-.restaurant .card-resto .container-img {
-  width: 100%;
-  height: 150px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  overflow: hidden;
-}
-.restaurant .card-resto .container-img img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
-}
-.restaurant .card-resto .new-tag {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #99E2D0;
-  color: #008766;
-  border-radius: 5px;
-  padding: 0.3rem 0.6rem;
-}
-.restaurant .card-resto .card-data {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.restaurant .card-resto .card-data .card-text {
-  margin: 1rem;
-}
-.restaurant .card-resto .card-data .card-favorite {
-  margin: 1rem;
-  width: 22px;
-  height: 21px;
-  align-self: center;
-  justify-self: center;
-  font-size: 22px;
-}
-.restaurant .card-resto .card-data h3 {
-  margin: 0;
-  padding-bottom: 0.5rem;
-}
-.restaurant .card-resto .card-data p {
-  margin: 0;
-}
-
-button {
-  height: 50px;
-  width: 218px;
-  border-radius: 50px;
-  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
-  color: white;
-  border: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-  background-color: #353535;
-  color: white;
-  padding: 1rem;
-  margin-top: 3rem;
-}
-footer p {
-  font-family: "Shrikhand";
-  margin-bottom: 1rem;
-  font-size: 18px;
-}
-footer ul {
-  list-style: none;
-  padding: 0;
-}
-footer ul li {
-  margin-bottom: 0.5rem;
-}
-footer ul li a {
-  color: white;
-  text-decoration: none;
-}
-footer ul li a i.fa-solid {
-  font-size: 12px;
-  padding-right: 0.5rem;
-}
-footer ul li a i.fa-solid.fa-handshake {
-  rotate: -45deg;
-  padding-right: 0.4rem;
-  translate: -10% -50%;
-  font-size: 10px;
 }
 
 .header-page {
@@ -284,7 +339,7 @@ footer ul li a i.fa-solid.fa-handshake {
 .container-menu .restaurant-name {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  gap: 2rem;
 }
 .container-menu .restaurant-name h1 {
   margin: 1rem;
@@ -292,7 +347,7 @@ footer ul li a i.fa-solid.fa-handshake {
   font-weight: 400;
 }
 .container-menu .restaurant-name i {
-  margin: 1rem;
+  margin: 1.5rem 1rem;
   width: 22px;
   height: 21px;
   align-self: center;
