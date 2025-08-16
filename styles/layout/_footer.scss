@@ -1,18 +1,41 @@
+@use '../abstracts/index' as *;
+
 footer {
     background-color: $darkgrey;
     color: $white;
     padding: 1rem;
     margin-top: 3rem;
 
+    @include respond-to(tablet) {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-direction: row;
+        padding: 0;
+    }
+
     p {
-        font-family: "Shrikhand";
+        font-family: $font-shrikhand;
         margin-bottom: 1rem;
         font-size: 18px;
+
+        @include respond-to(tablet) {
+            order: 10;
+            padding: 1.3rem 3rem;
+        }
     }
 
     ul {
         list-style: none;
         padding: 0;
+
+        @include respond-to(tablet) {
+            display: flex;
+            flex-direction: row;
+            order: -1;
+            gap: 1rem;
+            padding: 1rem;
+        }
 
         li {
             margin-bottom: 0.5rem;

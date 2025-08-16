@@ -52,14 +52,38 @@ footer {
   padding: 1rem;
   margin-top: 3rem;
 }
+@media screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+    padding: 0;
+  }
+}
 footer p {
-  font-family: "Shrikhand";
+  font-family: "Shrikhand", cursive, sans-serif;
   margin-bottom: 1rem;
   font-size: 18px;
+}
+@media screen and (min-width: 768px) {
+  footer p {
+    order: 10;
+    padding: 1.3rem 3rem;
+  }
 }
 footer ul {
   list-style: none;
   padding: 0;
+}
+@media screen and (min-width: 768px) {
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    order: -1;
+    gap: 1rem;
+    padding: 1rem;
+  }
 }
 footer ul li {
   margin-bottom: 0.5rem;
@@ -79,6 +103,83 @@ footer ul li a i.fa-solid.fa-handshake {
   font-size: 10px;
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: hideLoader 3s forwards;
+  gap: 15px;
+}
+.loader .loader-inner {
+  display: flex;
+  gap: 10px;
+}
+.loader .loader-inner div {
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(45deg, #9356DC, #FF79DA);
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+.loader .loader-inner div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loader .loader-inner div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.loader p {
+  font-family: "Shrikhand", cursive, sans-serif;
+  font-size: 24px;
+  color: #9356DC;
+  margin-top: 10px;
+}
+
+.loader-text {
+  font-size: 1.2rem;
+  color: #353535;
+  margin-top: 10px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes hideLoader {
+  0%, 80% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+body.home > *:not(.loader) {
+  opacity: 0;
+  animation: showContent 3s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes showContent {
+  to {
+    opacity: 1;
+  }
+}
 .fav-checkbox {
   display: none;
 }
@@ -90,35 +191,71 @@ footer ul li a i.fa-solid.fa-handshake {
   width: 24px;
   height: 22px;
   font-size: 22px;
-  color: #000000;
 }
 .fav-label i {
   position: absolute;
   top: 0;
   left: 0;
-  width: 22px;
+  width: 24px;
   height: 22px;
   line-height: 22px;
   text-align: center;
+  overflow: hidden;
+  pointer-events: none;
 }
 .fav-label i.fas {
-  display: none;
+  color: transparent;
+  background: linear-gradient(to bottom, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform-origin: bottom;
+  transform: scale(0);
 }
 .fav-label i.far {
-  display: inline;
+  color: #000000;
+  z-index: 1;
+  transition: opacity 0.2s;
 }
 
 .fav-checkbox:checked + .fav-label i.fas {
-  display: inline;
-  background: linear-gradient(to bottom, #9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  animation: fill-bounce 0.4s forwards;
 }
 
 .fav-checkbox:checked + .fav-label i.far {
-  display: none;
+  opacity: 0;
 }
 
+.fav-checkbox:not(:checked) + .fav-label i.fas {
+  animation: empty-bounce 0.4s forwards;
+}
+
+.fav-checkbox:not(:checked) + .fav-label i.far {
+  opacity: 1;
+}
+
+@keyframes fill-bounce {
+  0% {
+    transform: scaleY(0) scaleX(1);
+  }
+  60% {
+    transform: scaleY(1.2) scaleX(1.1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+@keyframes empty-bounce {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  60% {
+    transform: scaleY(0.2) scaleX(0.9);
+  }
+  100% {
+    transform: scaleY(0) scaleX(1);
+  }
+}
 button,
 a.btn {
   height: 50px;
@@ -150,6 +287,16 @@ a.btn {
   text-decoration: none;
   color: inherit;
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .card-resto {
+    width: 420px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .card-resto {
+    width: 490px;
+  }
 }
 .card-resto .container-img {
   width: 100%;
@@ -198,6 +345,132 @@ a.btn {
   margin: 0;
 }
 
+.container-plat {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.container-plat .data-plat {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-right: 1rem;
+}
+.container-plat .data-plat h3,
+.container-plat .data-plat p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container-plat span {
+  flex: 0 0 auto;
+  width: 60px;
+  text-align: right;
+  transition: margin-right 0.3s ease;
+  z-index: 2;
+}
+.container-plat .plat-checkbox {
+  display: none;
+}
+.container-plat .checkmark-bg {
+  position: absolute;
+  top: 0;
+  right: -80px;
+  height: 100%;
+  width: 80px;
+  border-radius: 8px;
+  background: #99E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.3s ease;
+  z-index: 1;
+}
+.container-plat .checkmark-bg i {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 50%;
+  background: white;
+  color: #99E2D0;
+}
+.container-plat .plat-checkbox:checked + .data-plat + span {
+  margin-right: 80px;
+}
+.container-plat .plat-checkbox:checked + .data-plat + span + .checkmark-bg {
+  right: 0;
+}
+
+.container-plat {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 15px;
+  border: 1px solid #DCDCDC;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  transition: background 0.3s ease;
+}
+.container-plat .data-plat {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-right: 1rem;
+}
+.container-plat .data-plat h3,
+.container-plat .data-plat p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+.container-plat .data-plat p {
+  font-size: 0.85rem;
+  color: #353535;
+}
+.container-plat span {
+  flex: 0 0 auto;
+  width: 60px;
+  text-align: right;
+  transition: margin-right 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+.container-plat .plat-checkbox {
+  display: none;
+}
+.container-plat .checkmark-bg {
+  position: absolute;
+  right: -80px;
+  top: 0;
+  height: 100%;
+  width: 80px;
+  background-color: #99E2D0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.3s ease;
+  z-index: 1;
+}
+.container-plat .checkmark-bg i {
+  color: #99E2D0;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.container-plat .plat-checkbox:checked + .data-plat + span + .checkmark-bg {
+  right: 0;
+}
+.container-plat .plat-checkbox:checked + .data-plat + span {
+  margin-right: 80px;
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -208,41 +481,92 @@ a.btn {
 }
 .info h1 {
   font-size: 24px;
+  font-weight: 700;
 }
 .info p {
   font-size: 18px;
+  font-weight: 300;
 }
 
 .fonctionnement {
   background-color: white;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100vw;
 }
-.fonctionnement h2 {
+.fonctionnement .fonctionnement-container {
+  width: 100%;
+  max-width: 1080px;
   display: flex;
-  justify-self: flex-start;
-  margin: 1rem;
+  flex-direction: column;
+  align-items: center;
 }
-.fonctionnement ol {
+@media screen and (min-width: 768px) {
+  .fonctionnement .fonctionnement-container {
+    width: calc(100vw - 5rem);
+    align-self: center;
+  }
+}
+.fonctionnement .fonctionnement-container h2 {
+  margin: 2rem 0 0 2rem;
+  align-self: flex-start;
+}
+@media screen and (min-width: 768px) {
+  .fonctionnement .fonctionnement-container h2 {
+    text-align: left;
+    align-self: flex-start;
+    margin-left: 2rem;
+  }
+}
+.fonctionnement .fonctionnement-container ol {
   list-style: none;
   padding: 2rem;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1080px;
+  align-items: center;
 }
-.fonctionnement ol li {
+@media screen and (min-width: 768px) {
+  .fonctionnement .fonctionnement-container ol {
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .fonctionnement .fonctionnement-container ol {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+.fonctionnement .fonctionnement-container ol li {
   max-width: 335px;
+  width: 100%;
+  height: 72px;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
   background: #F6F6F6;
-  padding: 1rem 0 1rem 2rem;
   border-radius: 20px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   position: relative;
-  margin-bottom: 1rem;
 }
-.fonctionnement ol li .number {
+@media screen and (min-width: 768px) {
+  .fonctionnement .fonctionnement-container ol li {
+    margin: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .fonctionnement .fonctionnement-container ol li {
+    justify-content: center;
+  }
+}
+.fonctionnement .fonctionnement-container ol li .number {
   position: absolute;
   left: -0.75rem;
   top: 50%;
@@ -257,10 +581,24 @@ a.btn {
   text-align: center;
   font-weight: bold;
 }
-.fonctionnement ol li i {
+.fonctionnement .fonctionnement-container ol li .container-data {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .fonctionnement .fonctionnement-container ol li .container-data {
+    padding-left: 1rem;
+  }
+}
+.fonctionnement .fonctionnement-container ol li .container-data span:not(.number) {
+  font-size: 16px;
+  font-weight: 500;
+}
+.fonctionnement .fonctionnement-container ol li .container-data i {
   color: #353535;
 }
-.fonctionnement ol li i.fa-store {
+.fonctionnement .fonctionnement-container ol li .container-data i.fa-store {
   color: #9356DC;
 }
 
@@ -268,6 +606,36 @@ a.btn {
   display: flex;
   flex-direction: column;
   margin: 1rem;
+}
+.restaurant .container-restaurant {
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+}
+.restaurant .container-restaurant h2 {
+  margin: 2rem 0 0 1rem;
+}
+@media screen and (min-width: 768px) {
+  .restaurant .container-restaurant h2 {
+    text-align: left;
+    align-self: flex-start;
+    margin-left: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .restaurant .container-restaurant {
+    width: calc(100vw - 5rem);
+    align-self: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .restaurant .container-restaurant .container-card-resto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+  }
 }
 
 .header-page {
@@ -348,7 +716,7 @@ a.btn {
 }
 .container-menu .restaurant-name i {
   margin: 1.5rem 1rem;
-  width: 22px;
+  width: 24px;
   height: 21px;
   align-self: center;
   justify-self: center;

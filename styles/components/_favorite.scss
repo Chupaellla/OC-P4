@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 .fav-checkbox {
     display: none;
 }
@@ -9,34 +11,80 @@
     width: 24px;
     height: 22px;
     font-size: 22px;
-    color: $black;
 
     i {
         position: absolute;
         top: 0;
         left: 0;
-        width: 22px;
+        width: 24px;
         height: 22px;
         line-height: 22px;
         text-align: center;
+        overflow: hidden;
+        pointer-events: none;
     }
 
     i.fas {
-        display: none;
+        color: transparent;
+        background: linear-gradient(to bottom, $purple, $pink);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform-origin: bottom;
+        transform: scale(0);
     }
 
     i.far {
-        display: inline;
+        color: $black;
+        z-index: 1;
+        transition: opacity 0.2s;
     }
 }
 
+// Remplissage coeur checkbox
 .fav-checkbox:checked+.fav-label i.fas {
-    display: inline;
-    background: linear-gradient(to bottom, $purple, $pink);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    animation: fill-bounce 0.4s forwards;
 }
 
+// Retrait coeur vide
 .fav-checkbox:checked+.fav-label i.far {
-    display: none;
+    opacity: 0;
+}
+
+// Retrait coeur plein
+.fav-checkbox:not(:checked)+.fav-label i.fas {
+    animation: empty-bounce 0.4s forwards;
+}
+
+// Affichage coeur vide
+.fav-checkbox:not(:checked)+.fav-label i.far {
+    opacity: 1;
+}
+
+@keyframes fill-bounce {
+    0% {
+        transform: scaleY(0) scaleX(1);
+    }
+
+    60% {
+        transform: scaleY(1.2) scaleX(1.1);
+    }
+
+    100% {
+        transform: scaleY(1) scaleX(1);
+    }
+}
+
+@keyframes empty-bounce {
+    0% {
+        transform: scaleY(1) scaleX(1);
+    }
+
+    60% {
+        transform: scaleY(0.2) scaleX(0.9);
+    }
+
+    100% {
+        transform: scaleY(0) scaleX(1);
+    }
 }

@@ -1,3 +1,5 @@
+@use '../abstracts/index' as *;
+
 .card-resto {
     position: relative;
     display: flex;
@@ -9,6 +11,14 @@
     text-decoration: none;
     color: inherit;
     margin-bottom: 1rem;
+
+    @include respond-to(tablet) {
+        width: 420px;
+    }
+
+    @include respond-to(desktop) {
+        width: 490px;
+    }
 
     .container-img {
         width: 100%;

@@ -1,0 +1,87 @@
+@use '../abstracts/index' as *;
+
+.container-plat {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 15px;
+    border: 1px solid $lightgrey;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    transition: background 0.3s ease;
+
+    // Texte du plat
+    .data-plat {
+        flex: 1 1 auto; // prend l’espace restant
+        min-width: 0; // essentiel pour ellipsis dans flex
+        margin-right: 1rem;
+
+        h3,
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0;
+        }
+
+        p {
+            font-size: 0.85rem;
+            color: $darkgrey;
+        }
+    }
+
+    // Prix
+    span {
+        flex: 0 0 auto; // le prix garde sa taille
+        width: 60px; // largeur réservée
+        text-align: right;
+        transition: margin-right 0.3s ease;
+        position: relative;
+        z-index: 2;
+    }
+
+    // Checkbox invisible
+    .plat-checkbox {
+        display: none;
+    }
+
+    // Carré vert avec la coche
+    .checkmark-bg {
+        position: absolute;
+        right: -80px; // caché par défaut
+        top: 0;
+        height: 100%;
+        width: 80px;
+        background-color: $lightgreen;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        z-index: 1;
+
+        i {
+            color: $lightgreen;
+            background-color: $white;
+            border-radius: 50%;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+    }
+
+    // Animation toggle quand la checkbox est cochée
+    .plat-checkbox:checked+.data-plat+span+.checkmark-bg {
+        right: 0;
+    }
+
+    .plat-checkbox:checked+.data-plat+span {
+        margin-right: 80px; // au lieu de transform
+    }
+}

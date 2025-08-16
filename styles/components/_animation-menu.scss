@@ -1,0 +1,64 @@
+@use '../abstracts/index' as *;
+
+.container-plat {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    .data-plat {
+        flex: 1 1 auto;
+        min-width: 0; // indispensable pour ellipsis
+        margin-right: 1rem;
+
+        h3,
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    span {
+        flex: 0 0 auto;
+        width: 60px;
+        text-align: right;
+        transition: margin-right .3s ease;
+        z-index: 2;
+    }
+
+    .plat-checkbox {
+        display: none;
+    }
+
+    .checkmark-bg {
+        position: absolute;
+        top: 0;
+        right: -80px;
+        height: 100%;
+        width: 80px;
+        border-radius: 8px;
+        background: $lightgreen;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right .3s ease;
+        z-index: 1;
+
+        i {
+            font-size: 1rem;
+            padding: 5px;
+            border-radius: 50%;
+            background: $white;
+            color: $lightgreen;
+        }
+    }
+
+    // État actif (checkbox cochée)
+    .plat-checkbox:checked+.data-plat+span {
+        margin-right: 80px;
+    }
+
+    .plat-checkbox:checked+.data-plat+span+.checkmark-bg {
+        right: 0;
+    }
+}

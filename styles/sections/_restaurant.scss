@@ -1,5 +1,40 @@
+@use '../abstracts/index' as *;
+
 .restaurant {
     display: flex;
     flex-direction: column;
     margin: 1rem;
+
+    .container-restaurant {
+        max-width: 1080px;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            margin: 2rem 0 0 1rem;
+
+            @include respond-to(tablet) {
+                text-align: left;
+                align-self: flex-start;
+                margin-left: 2rem;
+            }
+        }
+
+        @include respond-to(tablet) {
+            width: calc(100vw - 5rem);
+            align-self: center;
+        }
+
+        .container-card-resto {
+
+            @include respond-to(tablet) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+        }
+    }
 }

@@ -20,7 +20,16 @@
 
 </head>
 
-<body>
+<body class="home">
+    <div class="loader">
+        <div class="loader-inner">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>ohmyfood</p>
+    </div>
+
     <header>
         <div class="container-logo">
             <img src="assets/images/logo/ohmyfood.png" alt="Logo OhMyFood">
@@ -37,125 +46,136 @@
     </section>
 
     <section class="fonctionnement">
-        <h2>Fonctionnement</h2>
-        <ol>
-            <li>
-                <span class="number">1</span>
-                <i class="fas fa-mobile-alt"></i>
-                <span>Choisissez un restaurant</span>
-            </li>
-            <li>
-                <span class="number">2</span>
-                <i class="fas fa-list-ul"></i>
-                <span>Composez votre menu</span>
-            </li>
-            <li>
-                <span class="number">3</span>
-                <i class="fas fa-store"></i>
-                <span>Dégustez au restaurant</span>
-            </li>
-        </ol>
+        <div class="fonctionnement-container">
+            <h2>Fonctionnement</h2>
+            <ol>
+                <li>
+                    <span class="number">1</span>
+                    <div class="container-data">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Choisissez un restaurant</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="number">2</span>
+                    <div class="container-data">
+                        <i class="fas fa-list-ul"></i>
+                        <span>Composez votre menu</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="number">3</span>
+                    <div class="container-data">
+                        <i class="fas fa-store"></i>
+                        <span>Dégustez au restaurant</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
     </section>
 
     <section class="restaurant" id="restaurant">
-        <h2>Restaurants</h2>
+        <div class="container-restaurant">
+            <h2>Restaurants</h2>
 
-        <div>
-            <article>
-                <a class="card-resto" href="restaurants/palette_du_gout.html">
-                    <div class="container-img">
-                        <img src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                            alt="La palette du goût">
-                        <span class="new-tag">Nouveau</span>
-                    </div>
-                    <div class="card-data">
-                        <div class="card-text">
-                            <h3>La palette du goût</h3>
-                            <p>Ménilmontant</p>
+            <div class="container-card-resto">
+                <article>
+                    <a class="card-resto" href="restaurants/palette_du_gout.html">
+                        <div class="container-img">
+                            <img src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                                alt="La palette du goût">
+                            <span class="new-tag">Nouveau</span>
                         </div>
-                        <div class="card-favorite">
-                            <input type="checkbox" id="fav-1" class="fav-checkbox" />
-                            <label for="fav-1" class="fav-label">
-                                <i class="far fa-heart"></i> <!-- cœur vide -->
-                                <i class="fas fa-heart"></i> <!-- cœur plein -->
-                            </label>
-                        </div>
+                        <div class="card-data">
+                            <div class="card-text">
+                                <h3>La palette du goût</h3>
+                                <p>Ménilmontant</p>
+                            </div>
+                            <div class="card-favorite">
+                                <input type="checkbox" id="fav-1" class="fav-checkbox" />
+                                <label for="fav-1" class="fav-label">
+                                    <i class="far fa-heart"></i> <!-- cœur vide -->
+                                    <i class="fas fa-heart"></i> <!-- cœur plein -->
+                                </label>
+                            </div>
 
-                    </div>
-                </a>
-            </article>
+                        </div>
+                    </a>
+                </article>
 
-            <article>
-                <a class="card-resto" href="restaurants/note_enchantee.html">
-                    <div class="container-img">
-                        <img src="assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée">
-                        <span class="new-tag">Nouveau</span>
-                    </div>
-                    <div class="card-data">
-                        <div class="card-text">
-                            <h3>La note enchantée</h3>
-                            <p>Charonne</p>
+                <article>
+                    <a class="card-resto" href="restaurants/note_enchantee.html">
+                        <div class="container-img">
+                            <img src="assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée">
+                            <span class="new-tag">Nouveau</span>
                         </div>
-                        <div class="card-favorite">
-                            <input type="checkbox" id="fav-2" class="fav-checkbox" />
-                            <label for="fav-2" class="fav-label">
-                                <i class="far fa-heart"></i> <!-- cœur vide -->
-                                <i class="fas fa-heart"></i> <!-- cœur plein -->
-                            </label>
-                        </div>
+                        <div class="card-data">
+                            <div class="card-text">
+                                <h3>La note enchantée</h3>
+                                <p>Charonne</p>
+                            </div>
+                            <div class="card-favorite">
+                                <input type="checkbox" id="fav-2" class="fav-checkbox" />
+                                <label for="fav-2" class="fav-label">
+                                    <i class="far fa-heart"></i> <!-- cœur vide -->
+                                    <i class="fas fa-heart"></i> <!-- cœur plein -->
+                                </label>
+                            </div>
 
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a class="card-resto" href="restaurants/a_la_francaise.html">
-                    <div class="container-img">
-                        <img src="assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française">
-                    </div>
-                    <div class="card-data">
-                        <div class="card-text">
-                            <h3>À la française</h3>
-                            <p>Cité Rouge</p>
                         </div>
-                        <div class="card-favorite">
-                            <input type="checkbox" id="fav-3" class="fav-checkbox" />
-                            <label for="fav-3" class="fav-label">
-                                <i class="far fa-heart"></i> <!-- cœur vide -->
-                                <i class="fas fa-heart"></i> <!-- cœur plein -->
-                            </label>
+                    </a>
+                </article>
+                <article>
+                    <a class="card-resto" href="restaurants/a_la_francaise.html">
+                        <div class="container-img">
+                            <img src="assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+                                alt="À la française">
                         </div>
+                        <div class="card-data">
+                            <div class="card-text">
+                                <h3>À la française</h3>
+                                <p>Cité Rouge</p>
+                            </div>
+                            <div class="card-favorite">
+                                <input type="checkbox" id="fav-3" class="fav-checkbox" />
+                                <label for="fav-3" class="fav-label">
+                                    <i class="far fa-heart"></i> <!-- cœur vide -->
+                                    <i class="fas fa-heart"></i> <!-- cœur plein -->
+                                </label>
+                            </div>
 
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a class="card-resto" href="restaurants/delice_des_sens.html">
-                    <div class="container-img">
-                        <img src="assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-                            alt="Le délice des sens">
-                    </div>
-                    <div class="card-data">
-                        <div class="card-text">
-                            <h3>Le délice des sens</h3>
-                            <p>Folie-méricourt</p>
                         </div>
-                        <div class="card-favorite">
-                            <input type="checkbox" id="fav-4" class="fav-checkbox" />
-                            <label for="fav-4" class="fav-label">
-                                <i class="far fa-heart"></i> <!-- cœur vide -->
-                                <i class="fas fa-heart"></i> <!-- cœur plein -->
-                            </label>
+                    </a>
+                </article>
+                <article>
+                    <a class="card-resto" href="restaurants/delice_des_sens.html">
+                        <div class="container-img">
+                            <img src="assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                                alt="Le délice des sens">
                         </div>
+                        <div class="card-data">
+                            <div class="card-text">
+                                <h3>Le délice des sens</h3>
+                                <p>Folie-méricourt</p>
+                            </div>
+                            <div class="card-favorite">
+                                <input type="checkbox" id="fav-4" class="fav-checkbox" />
+                                <label for="fav-4" class="fav-label">
+                                    <i class="far fa-heart"></i> <!-- cœur vide -->
+                                    <i class="fas fa-heart"></i> <!-- cœur plein -->
+                                </label>
+                            </div>
 
-                    </div>
-                </a>
-            </article>
+                        </div>
+                    </a>
+                </article>
+            </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>OhMyFood</p>
+        <p>ohmyfood</p>
         <ul>
             <li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
             <li><a href="#"><i class="fa-solid fa-handshake"></i>Devenir partenaire</a></li>

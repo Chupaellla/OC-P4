@@ -1,16 +1,17 @@
-@import 'abstracts/variables';
+@use 'abstracts/index';
 
-@import 'base/base';
+@use 'base/base';
+@use 'layout/header';
+@use 'layout/footer';
 
-@import 'layout/header';
-@import 'layout/footer';
+@use 'components/loader';
+@use 'components/favorite';
+@use 'components/button';
+@use 'components/card';
+@use 'components/animation-menu';
+@use 'components/coche-menu';
 
-@import 'components/favorite';
-@import 'components/button';
-@import 'components/card';
-
-@import 'sections/info';
-@import 'sections/fonctionnement';
-@import 'sections/restaurant';
-
-@import 'pages/page-restaurant';
+@use 'sections/info';
+@use 'sections/fonctionnement';
+@use 'sections/restaurant';
+@use 'pages/page-restaurant';
