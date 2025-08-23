@@ -10,19 +10,19 @@
         display: flex;
         flex-direction: column;
 
+        @include respond-to(tablet) {
+            width: calc(100vw - 5rem);
+            align-self: center;
+        }
+
         h2 {
-            margin: 2rem 0 0 1rem;
+            margin-left: 0.5rem;
 
             @include respond-to(tablet) {
                 text-align: left;
                 align-self: flex-start;
                 margin-left: 2rem;
             }
-        }
-
-        @include respond-to(tablet) {
-            width: calc(100vw - 5rem);
-            align-self: center;
         }
 
         .container-card-resto {

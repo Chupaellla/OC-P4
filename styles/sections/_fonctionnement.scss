@@ -105,10 +105,13 @@
 
                     i {
                         color: $darkgrey;
+                    }
+                }
 
-                        &.fa-store {
-                            color: $purple;
-                        }
+                @include respond-to(desktop) {
+                    &:hover i {
+                        color: $purple;
+                        transform: scale(1.2);
                     }
                 }
             }

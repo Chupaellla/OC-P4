@@ -1,4 +1,4 @@
-@use '../abstracts/variables' as *;
+@use '../abstracts/index' as *;
 
 header {
     display: flex;
@@ -30,11 +30,27 @@ header {
         box-shadow: $shadow-default;
         margin-bottom: 0.5rem;
 
-        p {
+        .location-form {
             display: flex;
-            text-align: center;
             justify-content: center;
+            align-items: center;
             gap: 1rem;
+            padding: 0.5rem 0;
+            margin: 0;
+
+            i {
+                color: $darkgrey;
+            }
+
+            input {
+                border: none;
+                background: transparent;
+                text-align: center;
+                font-size: 1rem;
+                color: $darkgrey;
+                outline: none;
+                width: 150px;
+            }
         }
     }
 }

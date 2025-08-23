@@ -14,10 +14,9 @@
     background-color: $white;
     transition: background 0.3s ease;
 
-    // Texte du plat
     .data-plat {
-        flex: 1 1 auto; // prend l’espace restant
-        min-width: 0; // essentiel pour ellipsis dans flex
+        flex: 1 1 auto;
+        min-width: 0;
         margin-right: 1rem;
 
         h3,
@@ -34,30 +33,26 @@
         }
     }
 
-    // Prix
     span {
-        flex: 0 0 auto; // le prix garde sa taille
-        width: 60px; // largeur réservée
+        flex: 0 0 auto;
+        width: 60px;
         text-align: right;
         transition: margin-right 0.3s ease;
         position: relative;
         z-index: 2;
     }
 
-    // Checkbox invisible
     .plat-checkbox {
         display: none;
     }
 
-    // Carré vert avec la coche
     .checkmark-bg {
         position: absolute;
-        right: -80px; // caché par défaut
+        right: -80px;
         top: 0;
         height: 100%;
         width: 80px;
         background-color: $lightgreen;
-        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -76,12 +71,11 @@
         }
     }
 
-    // Animation toggle quand la checkbox est cochée
     .plat-checkbox:checked+.data-plat+span+.checkmark-bg {
         right: 0;
     }
 
     .plat-checkbox:checked+.data-plat+span {
-        margin-right: 80px; // au lieu de transform
+        margin-right: 80px;
     }
 }
