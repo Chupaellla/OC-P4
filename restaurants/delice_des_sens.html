@@ -2,10 +2,10 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le délice des sens - OhMyFood</title>
-    <link rel="stylesheet" href="../css/css/style.css" />
+    <link rel="stylesheet" href="../css/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -17,18 +17,18 @@
 <body class="restaurant-page">
     <header class="header-page">
         <a href="../index.html" class="back-arrow" aria-label="Retour"><i class="fas fa-arrow-left"></i></a>
-        <div class="container-logo"><img src="../assets/images/logo/ohmyfood.png" alt="Logo OhMyFood" /></div>
+        <div class="container-logo"><img src="../assets/images/logo/ohmyfood.png" alt="Logo OhMyFood"></div>
     </header>
 
     <div class="container-page-img">
-        <img src="../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Le délice des sens">
+        <img src="../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
     </div>
 
     <section class="container-menu">
         <div class="restaurant-name">
             <h1>Le délice des sens</h1>
-            <input type="checkbox" id="fav-3" class="fav-checkbox" checked />
-            <label for="fav-3" class="fav-label">
+            <input type="checkbox" id="fav-3" class="fav-checkbox" checked>
+            <label for="fav-3" class="fav-label" aria-label="Ajouter aux favoris">
                 <i class="far fa-heart"></i>
                 <i class="fas fa-heart"></i>
             </label>
@@ -36,95 +36,113 @@
 
         <section class="list-menu">
             <h2>Entrées</h2>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-1" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Tartare de thon</h3>
                     <p>Assaisonné au yuzu</p>
                 </div>
                 <span>25€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-1" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-2" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Bouchée de homard croustillant</h3>
                     <p>Et sa farandole de petits légumes</p>
                 </div>
                 <span>35€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-2" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-3" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Velouté de cèpes</h3>
                     <p>Aux truffes</p>
                 </div>
                 <span>20€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
+                <label for="plat-3" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
         </section>
 
         <section class="list-menu">
             <h2>Plats</h2>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-4" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Poulet rôti aux herbes de Provence</h3>
                     <p>Et sa crème de truffe</p>
                 </div>
                 <span>40€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-4" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-5" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Langouste rôtie</h3>
                     <p>Et ses légumes de saison</p>
                 </div>
                 <span>35€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-5" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-6" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Côte de bœuf Angus</h3>
                     <p>Et sa purée de panais</p>
                 </div>
                 <span>44€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
+                <label for="plat-6" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
         </section>
 
         <section class="list-menu">
             <h2>Desserts</h2>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-7" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Farandole de desserts</h3>
                     <p>Du chef</p>
                 </div>
                 <span>18€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-7" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-8" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Crème brûlée</h3>
                     <p>Revisitée</p>
                 </div>
                 <span>22€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-8" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-9" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Tiramisu</h3>
                     <p>À la noisette</p>
                 </div>
                 <span>23€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
+                <label for="plat-9" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
         </section>
 
         <div class="container-button"><button>Commander</button></div>

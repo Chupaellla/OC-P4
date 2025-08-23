@@ -2,10 +2,10 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À la française - OhMyFood</title>
-    <link rel="stylesheet" href="../css/css/style.css" />
+    <link rel="stylesheet" href="../css/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -17,7 +17,7 @@
 <body class="restaurant-page">
     <header class="header-page">
         <a href="../index.html" class="back-arrow" aria-label="Retour"><i class="fas fa-arrow-left"></i></a>
-        <div class="container-logo"><img src="../assets/images/logo/ohmyfood.png" alt="Logo OhMyFood" /></div>
+        <div class="container-logo"><img src="../assets/images/logo/ohmyfood.png" alt="Logo OhMyFood"></div>
     </header>
 
     <div class="container-page-img">
@@ -27,8 +27,8 @@
     <section class="container-menu">
         <div class="restaurant-name">
             <h1>À la française</h1>
-            <input type="checkbox" id="fav-4" class="fav-checkbox" checked />
-            <label for="fav-4" class="fav-label">
+            <input type="checkbox" id="fav-4" class="fav-checkbox" checked>
+            <label for="fav-4" class="fav-label" aria-label="Ajouter aux favoris">
                 <i class="far fa-heart"></i>
                 <i class="fas fa-heart"></i>
             </label>
@@ -36,95 +36,113 @@
 
         <section class="list-menu">
             <h2>Entrées</h2>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-1" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Tartare de poulpe acidulé</h3>
                     <p>Aux zestes d'orange</p>
                 </div>
                 <span>25€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-1" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-2" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Velouté de légumes d'antan</h3>
                     <p>Carotte, panais, topinambour</p>
                 </div>
                 <span>35€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-2" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-3" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Soupe à l'oignon</h3>
                     <p>Revisitée</p>
                 </div>
                 <span>20€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
+                <label for="plat-3" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
         </section>
 
         <section class="list-menu">
             <h2>Plats</h2>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-4" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Coquilles Saint-Jacques</h3>
                     <p>Accompagnées d'une purée de panais</p>
                 </div>
                 <span>40€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-4" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-5" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Magret de canard</h3>
                     <p>Et parmentier de pommes de terre</p>
                 </div>
                 <span>35€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-5" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-6" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Pigeonneau d'Ille-et-Vilaine</h3>
                     <p>Sur son lit de gnocchis aux légumes</p>
                 </div>
                 <span>44€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
+                <label for="plat-6" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
         </section>
 
         <section class="list-menu">
             <h2>Desserts</h2>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-7" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Pétales de violettes glacés</h3>
                     <p>Et purée de noisettes</p>
                 </div>
                 <span>18€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-7" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-8" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Fondant au chocolat</h3>
                     <p>Revisité</p>
                 </div>
                 <span>22€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
-            <label class="container-plat">
-                <input type="checkbox" class="plat-checkbox" />
+                <label for="plat-8" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
+
+            <div class="container-plat">
+                <input type="checkbox" id="plat-9" class="plat-checkbox">
                 <div class="data-plat">
                     <h3>Millefeuille croustillant</h3>
                     <p>Myrtilles et pâte d'amande</p>
                 </div>
                 <span>23€</span>
                 <div class="checkmark-bg"><i class="fas fa-check"></i></div>
-            </label>
+                <label for="plat-9" class="plat-overlay" aria-label="Sélectionner ce plat"></label>
+            </div>
         </section>
 
         <div class="container-button"><button>Commander</button></div>

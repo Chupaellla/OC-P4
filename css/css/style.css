@@ -289,6 +289,7 @@ a.btn {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  margin: 1rem;
 }
 button:hover,
 a.btn:hover {
@@ -629,6 +630,39 @@ a.btn:hover {
     padding: 2rem;
   }
 }
+.restaurant .container-restaurant .container-card-resto article {
+  position: relative;
+}
+.restaurant .container-restaurant .container-card-resto .fav-checkbox {
+  position: absolute;
+  left: -9999px;
+}
+.restaurant .container-restaurant .container-card-resto .fav-label {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.restaurant .container-restaurant .container-card-resto .fav-label .fas {
+  display: none;
+}
+.restaurant .container-restaurant .container-card-resto .fav-checkbox:checked + .fav-label .fas {
+  display: inline;
+}
+.restaurant .container-restaurant .container-card-resto .fav-checkbox:checked + .fav-label .far {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .restaurant .container-restaurant .container-card-resto .fav-label {
+    right: 2rem;
+    bottom: 3rem;
+  }
+}
 
 @media screen and (min-width: 768px) {
   body.restaurant-page {
@@ -671,9 +705,16 @@ a.btn:hover {
 .container-page-img img {
   width: 100%;
   height: 100%;
+  -o-object-position: 30% 70%;
+     object-position: 30% 70%;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+}
+@media screen and (min-width: 768px) {
+  .container-page-img img {
+    height: 383px;
+  }
 }
 
 .container-menu {
@@ -746,14 +787,18 @@ a.btn:hover {
   }
 }
 .container-menu .list-menu .container-plat {
-  border-radius: 20px;
-  background-color: white;
-  margin: 1rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
   padding: 1rem;
+  border: 1px solid #DCDCDC;
+  border-radius: 20px;
+  margin: 1rem;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: background 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .container-menu .list-menu .container-plat {
@@ -762,23 +807,74 @@ a.btn:hover {
   }
 }
 .container-menu .list-menu .container-plat .data-plat {
-  display: flex;
-  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-right: 1rem;
 }
-.container-menu .list-menu .container-plat h3 {
+.container-menu .list-menu .container-plat .data-plat h3,
+.container-menu .list-menu .container-plat .data-plat p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+.container-menu .list-menu .container-plat .data-plat h3 {
   margin: 0;
   font-size: 18px;
   font-weight: 500;
 }
-.container-menu .list-menu .container-plat p {
-  margin: 0;
+.container-menu .list-menu .container-plat .data-plat p {
   font-size: 15px;
   font-weight: 300;
+  color: #353535;
 }
 .container-menu .list-menu .container-plat span {
-  align-self: flex-end;
+  flex: 0 0 auto;
+  width: 60px;
+  text-align: right;
+  transition: margin-right 0.3s ease;
+  position: relative;
+  z-index: 2;
   font-weight: 700;
   font-size: 15px;
+}
+.container-menu .list-menu .container-plat .plat-checkbox {
+  display: none;
+}
+.container-menu .list-menu .container-plat .checkmark-bg {
+  position: absolute;
+  right: -80px;
+  top: 0;
+  height: 100%;
+  width: 80px;
+  background-color: #99E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.3s ease;
+  z-index: 1;
+}
+.container-menu .list-menu .container-plat .checkmark-bg i {
+  color: #99E2D0;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.container-menu .list-menu .container-plat .plat-checkbox:checked + .data-plat + span + .checkmark-bg {
+  right: 0;
+}
+.container-menu .list-menu .container-plat .plat-checkbox:checked + .data-plat + span {
+  margin-right: 80px;
+}
+.container-menu .list-menu .container-plat .plat-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  cursor: pointer;
 }
 .container-menu .container-button {
   margin-top: 2rem;

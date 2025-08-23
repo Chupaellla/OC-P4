@@ -35,6 +35,45 @@
                 padding: 2rem;
             }
 
+            article {
+                position: relative;
+            }
+
+            .fav-checkbox {
+                position: absolute;
+                left: -9999px;
+            }
+
+            .fav-label {
+                position: absolute;
+                right: 2rem;
+                bottom: 2rem;
+                z-index: 3;
+                display: inline-flex;
+                align-items: center;
+                font-size: 22px;
+                line-height: 1;
+                cursor: pointer;
+            }
+
+            .fav-label .fas {
+                display: none;
+            }
+
+            .fav-checkbox:checked+.fav-label .fas {
+                display: inline;
+            }
+
+            .fav-checkbox:checked+.fav-label .far {
+                display: none;
+            }
+
+            @include respond-to(tablet) {
+                .fav-label {
+                    right: 2rem;
+                    bottom: 3rem;
+                }
+            }
         }
     }
 }
