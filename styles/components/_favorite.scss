@@ -22,43 +22,50 @@
         text-align: center;
         overflow: hidden;
         pointer-events: none;
+        transition: opacity 0.3s ease;
     }
 
-    i.fas {
+    /* Cœur plein */
+    i.fa-solid {
         color: transparent;
         background: linear-gradient(to bottom, $purple, $pink);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
         transform-origin: bottom;
-        transform: scale(0);
+        opacity: 0;
     }
 
-    i.far {
+    /* Cœur vide */
+    i.fa-regular {
         color: $black;
         z-index: 1;
-        transition: opacity 0.2s;
+        opacity: 1;
     }
 }
 
-// Remplissage coeur checkbox
-.fav-checkbox:checked+.fav-label i.fas {
-    animation: fill-bounce 0.4s forwards;
-}
-
-// Retrait coeur vide
-.fav-checkbox:checked+.fav-label i.far {
-    opacity: 0;
-}
-
-// Retrait coeur plein
-.fav-checkbox:not(:checked)+.fav-label i.fas {
-    animation: empty-bounce 0.4s forwards;
-}
-
-// Affichage coeur vide
-.fav-checkbox:not(:checked)+.fav-label i.far {
+/* Cœur plein quand coché */
+.fav-checkbox:checked+.fav-label i.fa-solid {
     opacity: 1;
+    animation: fill-bounce 0.6s forwards;
+}
+
+/* Cœur vide disparaît quand coché */
+.fav-checkbox:checked+.fav-label i.fa-regular {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Cœur plein se vide quand décoché */
+.fav-checkbox:not(:checked)+.fav-label i.fa-solid {
+    opacity: 1;
+    animation: empty-bounce 0.6s forwards;
+}
+
+/* Cœur vide réapparaît APRÈS l'animation */
+.fav-checkbox:not(:checked)+.fav-label i.fa-regular {
+    opacity: 1;
+    transition: opacity 0.2s ease 0.6s;
 }
 
 @keyframes fill-bounce {
